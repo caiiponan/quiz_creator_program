@@ -145,7 +145,11 @@ class QuizCreatorGUI:
             # If user confirms, destroy the main window using root.destroy() method
             self.root.destroy()
             # If user cancels, do nothing and return to the program
-            
+
 # Create the main Tkinter window (root) using tk.Tk()
-# Create an instance of the QuizCreatorGUI class, passing the root window as an argument
-# Start tkinter event loop to handle user interactions using root.mainloop() that responds to button clicks and user input
+if __name__ == "__main__":
+    root = tk.Tk()
+    # Create an instance of the QuizCreatorGUI class, passing the root window as an argument
+    app = QuizCreatorGUI(root)
+    # Start tkinter event loop to handle user interactions using root.mainloop() that responds to button clicks and user input
+    root.mainloop()
