@@ -53,7 +53,7 @@ class QuizCreatorGUI:
         self.correct_answer_label.pack(padx = 5, pady = 5)
         self.correct_answer_entry = ttk.Entry(correct_answer_frame, width = 10)
         self.correct_answer_entry.pack(padx = 5, pady = 5)
-        
+
 # Create Frame to hold buttons
         buttons_frame = ttk.Frame(self.root)
         buttons_frame.pack(padx = 10, pady = 10, fill = tk.X)
