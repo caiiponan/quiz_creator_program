@@ -33,8 +33,17 @@ class QuizCreatorGUI:
         answer_frame.pack(padx = 10, pady = 5, fill = tk.X)
         self.answer_labels = []
         self.answer_entries = []
-        
+
 # Create Label and Entry widget for each answer (a, b, c, d) using a loop
+        for i, option in enumerate(['a', 'b', 'c', 'd']):
+            label = ttk.Label(answer_frame, text = f"Enter option {option}")
+            label.grid(row = i, column = 0, padx = 5, pady = 2, sticky = tk.W)
+            self.answer_labels.append(label)
+
+            entry = tk.Entry(answer_frame, width = 50)
+            entry.grid(row = i, column = 1, padx = 5, pady = 2, sticky = tk.W)
+            self.answer_entries.append(entry)
+            
 # Create LabelFrame for correct answer input
 # Create Label and Entry widget for correct answer
 # Create Frame to hold buttons
