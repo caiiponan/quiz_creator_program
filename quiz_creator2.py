@@ -100,16 +100,33 @@ class QuizCreatorGUI:
 # if all checks pass, return true
         return True
 # Define add_question method to handle adding a question to the quiz
+    def add_question(self):
 # Call validate_input to check if input is valid, if not, return
+        if not self.validate_input():
+            return
 # Get the question and answers, and correct answer from the entry fields using the get() method
+        question = self.question_entry.get().strip()
+        answers = {chr(97+ i): entry.get().strip() for i, entry in enumerate(self.answer_entries)}
+        correct_answer = self.correct_answer_entry.get().strip().lower()
 # Open file in append mode ('a') using the open() function
+        try:
+            with open(self.filename, 'a') as file:
 # Write the question and answers to the file using write() method
+                file.write(f"Question: {question}\n")
 # Write each answer optioon (a, b, c, d) to the file
+                for option, answer in answers.items():
+                    file.write(f"{option}. {answer}\n")
 # Write the correct answer to the file
-# Write a separator line (empty line) to the file
+                file.write(f"Correct Answer: {correct_answer}\n\n")
+                # Write a separator line (empty line) to the file
 # Call update status to display success message
+            self.update_status("Question added successfully.")
 # Call clear_entries to clear all input fields
+            self.clear_entries()
 # Handle potential writing errors using try-except block and display and error message using messagebox.showerror() if necessary
+        except Exception as e:
+            self.update_status(f"Error adding question: {e}")
+            messagebox.showerror("File Error", f"Error writing to file: {e}")
 # Define update_status method to display messages in the ScrolledText widget
 # Enable status text widget for editing using the config(state=tk.NORMAL) method
 # Insert the message at the end of the current text using insert(tk.END, message)
