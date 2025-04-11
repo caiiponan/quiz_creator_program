@@ -3,9 +3,18 @@ import tkinter as tk
 from tkinter import ttk, scrolledtext, messagebox
 
 # Use class QuizCreatorGUI to encapsulate the GUI logic
+class QuizCreatorGUI:
+    def __init__(self, root):
+        
 # Set title for main window
-# Define create_widgets method to create and arrange GUI elements
+        self.root = root
+        self.root.title("Quiz Creator")
+        
 # Call create_widgets method to set up GUI elements
+        self.create_widgets()
+        self.filename = "quiz_questions.txt"
+
+# Define create_widgets method to create and arrange GUI elements
 # Initialize file name for saving quiz questions
 # Create LabelFrame for question input
 # Create Label and Entry widget for question
