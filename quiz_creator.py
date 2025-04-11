@@ -43,8 +43,11 @@ class QuizCreatorGUI:
             entry = tk.Entry(answer_frame, width = 50)
             entry.grid(row = i, column = 1, padx = 5, pady = 2, sticky = tk.W)
             self.answer_entries.append(entry)
-            
+
 # Create LabelFrame for correct answer input
+        correct_answer_frame = ttk.LabelFrame(self.root, text = "Correct Answer")
+        correct_answer_frame.pack(padx = 10, pady = 5, fill = tk.X)
+        
 # Create Label and Entry widget for correct answer
 # Create Frame to hold buttons
 # Create 'Add Question' and 'Exit' buttons with associated commands
