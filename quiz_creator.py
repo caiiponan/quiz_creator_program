@@ -27,7 +27,13 @@ class QuizCreatorGUI:
         self.question_label.pack(padx = 5, pady = 5)
         self.question_entry = ttk.Entry(question_frame, width = 50)
         self.question_entry.pack(padx = 5, pady = 5)
+
 # Create LabelFrame for answer options
+        answer_frame = ttk.LabelFrame(self.root, text = "Answers")
+        answer_frame.pack(padx = 10, pady = 5, fill = tk.X)
+        self.answer_labels = []
+        self.answer_entries = []
+        
 # Create Label and Entry widget for each answer (a, b, c, d) using a loop
 # Create LabelFrame for correct answer input
 # Create Label and Entry widget for correct answer
