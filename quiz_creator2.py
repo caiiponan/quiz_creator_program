@@ -68,11 +68,19 @@ class QuizCreatorGUI:
 # Create a ScrolledText widget to display status messages
         self.status_text = scrolledtext.ScrolledText(self.root, height = 5, state = tk.DISABLED)
         self.status_text.pack(padx = 10, pady = 5, fill = tk.BOTH, expand = True)
-# Arrange all the created widgets using the pack and grid layout managers
+        # Arrange all the created widgets using the pack and grid layout managers
 # Define clear_entries to clear all input fields
+    def clear_entries(self):
 # Delete text in the question entry using the delete() method
+        self.question_entry.delete(0, tk.END)
+
 # Loop through each answer entry and clear its text
+        for entry in self.answer_entries:
 # Clear the correct answer entry
+            entry.delete(0, tk.END)
+# Clear the correct answer entry using the delete() method
+        self.correct_answer_entry.delete(0, tk.END)
+        
 # Define validate_input to validate user input before adding a question
 # Get the correct answer from the entry, convert it to lowewrcase, and remove leading/trailing spaces using the get(), lower(), and strip() methods
 # Check if the correct answer is one of the options (a, b, c, d), show error message using messagebox.showerror() and return false if not
