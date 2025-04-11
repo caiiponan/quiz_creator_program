@@ -9,15 +9,20 @@ class QuizCreatorGUI:
 # Set title for main window
         self.root = root
         self.root.title("Quiz Creator")
-        
+
 # Call create_widgets method to set up GUI elements
         self.create_widgets()
+# Initialize file name for saving quiz questions
         self.filename = "quiz_questions.txt"
 
 # Define create_widgets method to create and arrange GUI elements
-# Initialize file name for saving quiz questions
+    def create_widgets(self):
+
 # Create LabelFrame for question input
+        question_frame = ttk.LabelFrame(self.root, text = "Question")
+        question_frame.pack(padx = 10, pady = 10, fill = tk.X)
 # Create Label and Entry widget for question
+
 # Create LabelFrame for answer options
 # Create Label and Entry widget for each answer (a, b, c, d) using a loop
 # Create LabelFrame for correct answer input
