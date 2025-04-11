@@ -128,10 +128,16 @@ class QuizCreatorGUI:
             self.update_status(f"Error adding question: {e}")
             messagebox.showerror("File Error", f"Error writing to file: {e}")
 # Define update_status method to display messages in the ScrolledText widget
-# Enable status text widget for editing using the config(state=tk.NORMAL) method
-# Insert the message at the end of the current text using insert(tk.END, message)
-# Scroll to the end of the text using see(tk.END) method
-# Disable the text widget for editing using config(state=tk.DISABLED) method
+    def update_status(self, message):
+        # Enable status text widget for editing using the config(state=tk.NORMAL) method
+        self.status_text.config(state = tk.NORMAL)
+        # Insert the message at the end of the current text using insert(tk.END, message)
+        self.status_text.insert(tk.END, message + "\n")
+        # Scroll to the end of the text using see(tk.END) method
+        self.status_text.see(tk.END)
+        # Disable the text widget for editing using config(state=tk.DISABLED) method
+        self.status_text.config(state = tk.DISABLED)
+
 # Define exit_program method to close the application
 # Display confirmation dialogue using messagebox.askokcancel()
 # If user confirms, destroy the main window using root.destroy() method
