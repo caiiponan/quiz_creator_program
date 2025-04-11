@@ -64,8 +64,10 @@ class QuizCreatorGUI:
 
         self.exit_button = ttk.Button(buttons_frame, text = "Exit", command = self.exit_program)
         self.exit_button.pack(side = tk.RIGHT, padx = 5)
-        
+
 # Create a ScrolledText widget to display status messages
+        self.status_text = scrolledtext.ScrolledText(self.root, height = 5, state = tk.DISABLED)
+        self.status_text.pack(padx = 10, pady = 5, fill = tk.BOTH, expand = True)
 # Arrange all the created widgets using the pack and grid layout managers
 # Define clear_entries to clear all input fields
 # Delete text in the question entry using the delete() method
