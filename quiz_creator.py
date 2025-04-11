@@ -25,7 +25,8 @@ class QuizCreatorGUI:
 # Create Label and Entry widget for question
         self.question_label = ttk.Label(question_frame, text = "Enter the question:")
         self.question_label.pack(padx = 5, pady = 5)
-        
+        self.question_entry = ttk.Entry(question_frame, width = 50)
+        self.question_entry.pack(padx = 5, pady = 5)
 # Create LabelFrame for answer options
 # Create Label and Entry widget for each answer (a, b, c, d) using a loop
 # Create LabelFrame for correct answer input
