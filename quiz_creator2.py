@@ -91,4 +91,3 @@ class QuizCreatorGUI:
 # Create the main Tkinter window (root) using tk.Tk()
 # Create an instance of the QuizCreatorGUI class, passing the root window as an argument
 # Start tkinter event loop to handle user interactions using root.mainloop() that responds to button clicks and user input
->>>>>>> parent of d5562a2 (Created add question and exit button.)
