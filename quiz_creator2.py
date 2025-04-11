@@ -80,13 +80,25 @@ class QuizCreatorGUI:
             entry.delete(0, tk.END)
 # Clear the correct answer entry using the delete() method
         self.correct_answer_entry.delete(0, tk.END)
-        
+
 # Define validate_input to validate user input before adding a question
+    def validate_input(self):
 # Get the correct answer from the entry, convert it to lowewrcase, and remove leading/trailing spaces using the get(), lower(), and strip() methods
+        correct_answer = self.correct_answer_entry.get().lower().strip()
 # Check if the correct answer is one of the options (a, b, c, d), show error message using messagebox.showerror() and return false if not
+        if correct_answer not in ['a', 'b', 'c', 'd']:
+            messagebox.showerror("Input Error", "Invalid correct answer. Please enter a, b, c, or d.")
+            return False
 # If entry is empty, show error message and return false
+        if not self.question_entry.get():
+            messagebox.showerror("Input Error", "Question cannot be empty.")
 # Loop through all answer entries and check if they are empty, show error message and return false if any are empty
+        for entry in self.answer_entries:
+            if not entry.get().strip():
+                messagebox.showerror("Input Error", "Answers cannot be empty.")
+                return False
 # if all checks pass, return true
+        return True
 # Define add_question method to handle adding a question to the quiz
 # Call validate_input to check if input is valid, if not, return
 # Get the question and answers, and correct answer from the entry fields using the get() method
