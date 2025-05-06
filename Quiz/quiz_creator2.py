@@ -1,4 +1,4 @@
-# Initialize main window (root) using Tkinter's Tk() class
+    # Initialize main window (root) using Tkinter's Tk() class
 import tkinter as tk
 from tkinter import ttk, scrolledtext, messagebox
 
