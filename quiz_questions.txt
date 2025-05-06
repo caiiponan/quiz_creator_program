@@ -1,0 +1,35 @@
+Question: 1+1=?
+a. 1
+b. 2
+c. 3
+d. 4
+Correct Answer: b
+
+Question: What is the capital of the Philippines?
+a. Cubao
+b. Pasig
+c. Manila
+d. Quezon
+Correct Answer: c
+
+Question: If you are blind, how many are the options?
+a. 0
+b. 2
+c. 4
+d. 3
+Correct Answer: a
+
+Question: If it rains, what will get wet first?
+a. Roof
+b. Floor
+c. Clouds
+d. Airplanes
+Correct Answer: c
+
+Question: What is the square root of 4?
+a. 8
+b. 16
+c. 2
+d. 4
+Correct Answer: c
+
