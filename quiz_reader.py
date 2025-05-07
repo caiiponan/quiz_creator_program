@@ -1,7 +1,21 @@
-# import random
-# Error handling
-    # Create function to load questions from file
-        # Skip empty lines
+import random
+
+# Create function to load questions from file
+def load_questions(file_name = "quiz_questions.txt"):
+    # Error handling
+    try:
+        with open(file_name, 'r') as file:
+            lines = file.readlines()
+        # Initialize variables as empty lists and dictionaries
+        question_list = []
+        question_data = {}
+        
+        for line in lines:
+            line = line.strip()
+            # Skip empty lines
+            if not line:
+                continue
+        
         # Save previous questions if a new one starts
         # Strip trailing spaces just to get the letter
         # Remove any period after the answer letter if present
