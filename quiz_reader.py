@@ -65,6 +65,11 @@ def start_quiz(question_list):
         while user_answer not in {'a', 'b', 'c', 'd'}:
             user_answer = input("Please enter a valid option (a/b/c/d): ").lower()
     # Validate the correct answer
+        correct_key = question.get('correct_answer')
+        if correct_key not in {'a', 'b', 'c', 'd'}:
+            print("\033[91mError: Invalid or missing correct answer key in the question data.\033[0m")
+            print(f"Debug: Question data: {question}")  # Debug output
+            continue
     # Get correct option text
         # Debug output
     # Add score if answer is correct
