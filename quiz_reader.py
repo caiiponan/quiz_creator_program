@@ -36,8 +36,16 @@ def load_questions(file_name = "quiz_questions.txt"):
             correct_answer = line.split(':', 1)[1].strip().lower()
             # Remove any period after the answer letter if present
             question_data['correct_answer'] = correct_answer[0]
-    # Add question to the list
+        # Add question to the list
+        if question_data:
+            question_list.append(question_data)
+
+        return question_list
 # Handle error if error is FileNotFoundError
+    except FileNotFoundError:
+        print("Quiz file not found")
+        return []
+
 # Function to start the quiz
     # Randomize the questions
     # Display the questions and options
