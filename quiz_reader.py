@@ -1,4 +1,5 @@
 import random
+import os
 
 # Create function to load questions from file
 def load_questions(file_name = 'quiz.txt'):
@@ -89,6 +90,7 @@ def start_quiz(question_list):
 
 # Main function to run the quiz
 if __name__ == "__main__":
-    questions_from_file = load_questions("quiz_questions.txt")
+    print("Current working directory:", os.getcwd())
+    questions_from_file = load_questions('quiz.txt')
     if questions_from_file:
         start_quiz(questions_from_file)
