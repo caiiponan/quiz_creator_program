@@ -86,5 +86,9 @@ def start_quiz(question_list):
     # Display final score
     print(f"\n\033[96mYour final score is {total_score}/{len(question_list)}.\033[0m")
     print("\033[93mThanks for playing!\033[0m")
-    
+
 # Main function to run the quiz
+if __name__ == "__main__":
+    questions_from_file = load_questions("quiz_questions.txt")
+    if questions_from_file:
+        start_quiz(questions_from_file)
