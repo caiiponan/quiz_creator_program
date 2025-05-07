@@ -17,8 +17,25 @@ def load_questions(file_name = "quiz_questions.txt"):
                 continue
         
         # Save previous questions if a new one starts
-        # Strip trailing spaces just to get the letter
-        # Remove any period after the answer letter if present
+        if line.startswith('Question:'):
+            if question_data:
+                question_list.append(question_data)
+                question_data = {}
+            question_data['question'] = line.split(':', 1)[1].strip()
+            # Initialize options
+        elif line.startswith('a.') or line.startswith('a'):
+            question_data['option_a'] = line[2:].strip() if line.startswith('a.') else line[1:].strip()
+        elif line.startswith('b.') or line.startswith('b'):
+            question_data['option_b'] = line[2:].strip() if line.startswith('b.') else line[1:].strip()
+        elif line.startswith('c.') or line.startswith('c'):
+            question_data['option_c'] = line[2:].strip() if line.startswith('c.') else line[1:].strip()
+        elif line.startswith('d.') or line.startswith('d'):
+            question_data['option_d'] = line[2:].strip() if line.startswith('d.') else line[1:].strip()
+        elif line.startswith('Correct Answer:'):
+            # Strip trailing spaces just to get the letter
+            correct_answer = line.split(':', 1)[1].strip().lower()
+            # Remove any period after the answer letter if present
+            question_data['correct_answer'] = correct_answer[0]
     # Add question to the list
 # Handle error if error is FileNotFoundError
 # Function to start the quiz
