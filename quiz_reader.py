@@ -1,7 +1,7 @@
 import random
 
 # Create function to load questions from file
-def load_questions(file_name = "quiz_questions.txt"):
+def load_questions(file_name = 'quiz.txt'):
     # Error handling
     try:
         with open(file_name, 'r') as file:
