@@ -76,8 +76,15 @@ def start_quiz(question_list):
             print("\033[91mError: Missing option for the correct answer key.\033[0m")
             print(f"Debug: Question data: {question}")  # Debug output
             continue
-        
     # Add score if answer is correct
+        if user_answer == correct_key:
+            print("\033[92mCorrect!\033[0m")
+            total_score += 1
     # No score if answer is incorrect
+        else:
+            print(f"\033[91mWrong! Correct answer was: {correct_key}) {correct_text}\033[0m")
     # Display final score
+    print(f"\n\033[96mYour final score is {total_score}/{len(question_list)}.\033[0m")
+    print("\033[93mThanks for playing!\033[0m")
+    
 # Main function to run the quiz
