@@ -71,7 +71,12 @@ def start_quiz(question_list):
             print(f"Debug: Question data: {question}")  # Debug output
             continue
     # Get correct option text
-        # Debug output
+        correct_text = question.get(f"option_{correct_key}")
+        if not correct_text:
+            print("\033[91mError: Missing option for the correct answer key.\033[0m")
+            print(f"Debug: Question data: {question}")  # Debug output
+            continue
+        
     # Add score if answer is correct
     # No score if answer is incorrect
     # Display final score
