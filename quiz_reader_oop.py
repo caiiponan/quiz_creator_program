@@ -54,3 +54,10 @@ class QuizReader:
         print("\n\033[94m--- Welcome to the Quiz Game! ---\033[0m")
         random.shuffle(question_list)
         total_score = 0
+
+        for question_number, question in enumerate(question_list, 1):
+            print(f"\nQuestion {question_number}: {question['question']}")
+            print(f"a) {question['option_a']}")
+            print(f"b) {question['option_b']}")
+            print(f"c) {question['option_c']}")
+            print(f"d) {question['option_d']}")
