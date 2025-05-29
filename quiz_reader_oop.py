@@ -45,3 +45,8 @@ class QuizReader:
             question_list.append(question_data)
 
         return question_list
+    
+    def start_quiz(question_list):
+        if not question_list:
+            print("No valid questions were loaded. Exiting the quiz.")
+            return
