@@ -50,3 +50,7 @@ class QuizReader:
         if not question_list:
             print("No valid questions were loaded. Exiting the quiz.")
             return
+        
+        print("\n\033[94m--- Welcome to the Quiz Game! ---\033[0m")
+        random.shuffle(question_list)
+        total_score = 0
