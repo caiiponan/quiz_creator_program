@@ -77,3 +77,9 @@ class QuizReader:
 
         print(f"\n\033[96mYour final score is {total_score}/{len(question_list)}.\033[0m")
         print("\033[93mThanks for playing!\033[0m")
+    
+if __name__ == "__main__":
+    print("Running Program....")
+    quiz_reader = QuizReader("quiz.txt")
+    if quiz_reader:
+        QuizReader.start_quiz(quiz_reader.question_list)
