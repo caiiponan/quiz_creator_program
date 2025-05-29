@@ -61,3 +61,10 @@ class QuizReader:
             print(f"b) {question['option_b']}")
             print(f"c) {question['option_c']}")
             print(f"d) {question['option_d']}")
+
+        user_answer = input("Your answer (a/b/c/d): ").lower()
+        while user_answer not in {'a', 'b', 'c', 'd'}:
+            user_answer = input("Please enter a valid option (a/b/c/d): ").lower()
+
+        correct_key = question.get('correct_answer')
+        correct_text = question.get(f"option_{correct_key}", "Unknown")
