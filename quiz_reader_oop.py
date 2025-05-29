@@ -74,3 +74,6 @@ class QuizReader:
             total_score += 1
         else:
             print(f"\033[91mWrong! Correct answer was: {correct_key}) {correct_text}\033[0m")
+
+        print(f"\n\033[96mYour final score is {total_score}/{len(question_list)}.\033[0m")
+        print("\033[93mThanks for playing!\033[0m")
