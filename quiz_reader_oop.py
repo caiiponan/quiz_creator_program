@@ -15,3 +15,12 @@ class QuizReader:
         except FileNotFoundError:
             print(f"Error: The file '{self.file_name}' was not found.")
             return []
+        
+        question_list = []
+        question_data = {}
+
+        for line in lines:
+            line.strip()
+            if not line:
+                continue
+            
