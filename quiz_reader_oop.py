@@ -68,3 +68,9 @@ class QuizReader:
 
         correct_key = question.get('correct_answer')
         correct_text = question.get(f"option_{correct_key}", "Unknown")
+
+        if user_answer == correct_key:
+            print("\033[92mCorrect!\033[0m")
+            total_score += 1
+        else:
+            print(f"\033[91mWrong! Correct answer was: {correct_key}) {correct_text}\033[0m")
