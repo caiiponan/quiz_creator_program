@@ -23,4 +23,25 @@ class QuizReader:
             line.strip()
             if not line:
                 continue
-            
+
+            if line.startswith('Question:'):
+                if question_data:
+                    question_list.append(question_data)
+                    question_data = {}
+                question_data['question'] = line.split(':', 1)[1].strip()
+            elif line.startswith('a.') or line.startswith('a'):
+                question_data['option_a'] = line[2:].strip()
+            elif line.startswith('b.') or line.startswith('b'):
+                question_data['option_b'] = line[2:].strip()
+            elif line.startswith('c.') or line.startswith('c'):
+                question_data['option_c'] = line[2:].strip()
+            elif line.startswith('d.') or line.startswith('d'):
+                question_data['option_d'] = line[2:].strip()
+            elif line.startswith('Correct Answer:'):
+                correct_answer = line.split(':', 1)[1].strip().lower()
+                question_data['correct_answer'] = correct_answer[0]
+
+        if question_data:
+            question_list.append(question_data)
+
+        return question_list
